@@ -62,8 +62,9 @@ class Solution {
         for (int i = 0; i < dis; i++) {
             ListNode tmpHead = dummy.next;
             ListNode newNode = new ListNode(longPtr.val);
-            dummy.next = newNode;
             newNode.next = tmpHead;
+            dummy.next = newNode;
+            longPtr = longPtr.next;
         }
 
         //对齐后开始执行加法
@@ -74,7 +75,7 @@ class Solution {
                 //处理进位
                 ListNode pre = dummy;
                 ListNode cur = pre.next;
-                int newCarry = carry；
+                int newCarry = carry;
                 while (cur != null && newCarry != 0) {
                     int newSum = (cur.val + newCarry) % 10;
                     newCarry = (cur.val + newCarry) / 10;
@@ -85,7 +86,7 @@ class Solution {
                 if(newCarry != 0) {
                     //最后还要补上一个
                     ListNode newNode = new ListNode(newCarry);
-                    cur.next = newNode;
+                    pre.next = newNode;
                 }
 
             }
@@ -94,6 +95,9 @@ class Solution {
             ListNode newNode = new ListNode(curSum);
             dummy.next = newNode;
             newNode.next = tmpHead;
+            
+            longPtr = longPtr.next;
+            shortPtr = shortPtr.next;
         }
 
         //将结果反转
@@ -105,13 +109,13 @@ class Solution {
     ListNode reverseList(ListNode head) {
         ListNode pre = null;
         ListNode cur = head;
-        ListNode next = head.next;
 
         while(cur != null) {
+            ListNode nextTmp = cur.next;
+            
             cur.next = pre;
             pre = cur;
-            cur = next;
-            next = cur.next;
+            cur = nextTmp;
         }
 
         return pre;
