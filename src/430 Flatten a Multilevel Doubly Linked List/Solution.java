@@ -37,9 +37,8 @@ class Solution {
                 stack.push(cur.child);
                 cur.child = null;
             }
-
             tail.next = cur;
-            cur.prev = dummy;
+            cur.prev = tail;
             tail = tail.next;
         }
 
