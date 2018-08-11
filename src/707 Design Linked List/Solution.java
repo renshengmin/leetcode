@@ -9,8 +9,8 @@ class MyLinkedList {
         }
     }
 
-    Node head;
-    int length;
+    private Node head;
+    private int length;
 
     /**
      * Initialize your data structure here.
