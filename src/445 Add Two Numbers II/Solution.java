@@ -83,7 +83,7 @@ class Solution {
                     pre = cur;
                     cur = cur.next;
                 }
-                if(newCarry != 0) {
+                if (newCarry != 0) {
                     //最后还要补上一个
                     ListNode newNode = new ListNode(newCarry);
                     pre.next = newNode;
@@ -95,7 +95,7 @@ class Solution {
             ListNode newNode = new ListNode(curSum);
             dummy.next = newNode;
             newNode.next = tmpHead;
-            
+
             longPtr = longPtr.next;
             shortPtr = shortPtr.next;
         }
@@ -110,9 +110,9 @@ class Solution {
         ListNode pre = null;
         ListNode cur = head;
 
-        while(cur != null) {
+        while (cur != null) {
             ListNode nextTmp = cur.next;
-            
+
             cur.next = pre;
             pre = cur;
             cur = nextTmp;

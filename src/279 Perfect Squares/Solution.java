@@ -31,10 +31,4 @@ class Solution {
         }
         return dp[n];
     }
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(solution.numSquares(12));
-        System.out.println(solution.numSquares(13));
-    }
 }

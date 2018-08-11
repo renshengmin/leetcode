@@ -16,14 +16,14 @@ class Solution {
         dummy.next = head;
         ListNode evenHead = head.next;
 
-		//遍历
+        //遍历
         ListNode oddPtr = head;
         ListNode evenPtr = head.next;
         while (evenPtr != null && evenPtr.next != null) {
-        	oddPtr.next = evenPtr.next;
-        	evenPtr.next = evenPtr.next.next;
-        	oddPtr = oddPtr.next;
-        	evenPtr = evenPtr.next;
+            oddPtr.next = evenPtr.next;
+            evenPtr.next = evenPtr.next.next;
+            oddPtr = oddPtr.next;
+            evenPtr = evenPtr.next;
         }
 
         oddPtr.next = evenHead;

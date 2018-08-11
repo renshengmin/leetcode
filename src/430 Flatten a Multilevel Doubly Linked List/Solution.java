@@ -20,7 +20,7 @@ class Solution {
     public Node flatten(Node head) {
         Stack<Node> stack = new Stack<>();
 
-        if(null == head) {
+        if (null == head) {
             return head;
         }
 
@@ -28,12 +28,12 @@ class Solution {
         Node tail = dummy;
 
         stack.push(head);
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             Node cur = stack.pop();
-            if(cur.next != null) {
+            if (cur.next != null) {
                 stack.push(cur.next);
             }
-            if(cur.child != null) {
+            if (cur.child != null) {
                 stack.push(cur.child);
                 cur.child = null;
             }

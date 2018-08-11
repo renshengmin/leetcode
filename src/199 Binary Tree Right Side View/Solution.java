@@ -16,15 +16,15 @@ class Solution {
 
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
-        while(!q.isEmpty()) {
+        while (!q.isEmpty()) {
             int curLevel = q.size();
             TreeNode curNode;
-            for(int i =0; i<curLevel; ++i) {
+            for (int i = 0; i < curLevel; ++i) {
                 curNode = q.poll();
-                if(curNode.left != null) {
+                if (curNode.left != null) {
                     q.offer(curNode.left);
                 }
-                if(curNode.right != null) {
+                if (curNode.right != null) {
                     q.offer(curNode.right);
                 }
             }
